@@ -8,4 +8,6 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
 
     @EntityGraph(attributePaths = {"formation", "tactic", "players"})
     Team findWithPlayersById(Long id);
+
+    boolean existsByName(String name);
 }
