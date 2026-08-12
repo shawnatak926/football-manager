@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선수 구매 | Football Manager HQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="transfer-market">
+<div class="site-shell">
+    <header class="site-header">
+        <a class="brand" href="/">Football Manager HQ</a>
+        <nav class="main-nav">
+            <a href="/">홈</a>
+            <a href="/choose-team.html">팀 선택</a>
+            <a href="/transfer-market.html">선수 구매</a>
+            <a href="/lineup-builder.html">포지션 배치</a>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="page-intro">
+            <p class="eyebrow">Step 2</p>
+            <h1>EPL 선수들을 구매하세요</h1>
+            <p>가격은 설정되어 있지만 유저 지갑은 무한입니다. 최소 11명을 골라 포지션 배치로 넘어갈 수 있습니다.</p>
+        </section>
+
+        <section class="summary-strip">
+            <div class="status-card">
+                <span>Selected Team</span>
+                <strong id="market-selected-team">선택 전</strong>
+            </div>
+            <div class="status-card">
+                <span>Wallet</span>
+                <strong>Unlimited</strong>
+            </div>
+            <div class="status-card">
+                <span>Purchased</span>
+                <strong id="market-player-count">0</strong>
+            </div>
+        </section>
+
+        <section class="market-layout">
+            <article class="feature-panel market-panel">
+                <div class="section-heading">
+                    <h2>EPL 선수 마켓</h2>
+                    <span class="chip">GET /api/players/epl-market</span>
+                </div>
+                <div id="market-player-grid" class="market-grid"></div>
+            </article>
+
+            <aside class="feature-panel cart-panel">
+                <div class="section-heading">
+                    <h2>구매 완료 선수</h2>
+                    <button id="clear-purchases-button" class="ghost-button" type="button">전체 비우기</button>
+                </div>
+                <div id="purchased-player-list" class="compact-list"></div>
+                <div class="stack-actions">
+                    <a class="ghost-button strong" href="/choose-team.html">팀 다시 선택</a>
+                    <a class="primary-button" href="/lineup-builder.html">포지션 정하기</a>
+                </div>
+            </aside>
+        </section>
+    </main>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

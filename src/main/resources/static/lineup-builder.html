@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션 배치 | Football Manager HQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="lineup-builder">
+<div class="site-shell">
+    <header class="site-header">
+        <a class="brand" href="/">Football Manager HQ</a>
+        <nav class="main-nav">
+            <a href="/">홈</a>
+            <a href="/choose-team.html">팀 선택</a>
+            <a href="/transfer-market.html">선수 구매</a>
+            <a href="/lineup-builder.html">포지션 배치</a>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="page-intro">
+            <p class="eyebrow">Step 3</p>
+            <h1>구매한 선수들의 포지션을 정하세요</h1>
+            <p>선수 구매가 끝났다면 여기서 선발 슬롯을 채우면 됩니다. 모든 페이지는 홈에서 다시 접근할 수 있습니다.</p>
+        </section>
+
+        <section class="summary-strip">
+            <div class="status-card">
+                <span>Selected Team</span>
+                <strong id="lineup-selected-team">선택 전</strong>
+            </div>
+            <div class="status-card">
+                <span>Purchased Players</span>
+                <strong id="lineup-player-count">0</strong>
+            </div>
+            <div class="status-card">
+                <span>Assigned Slots</span>
+                <strong id="assigned-slot-count">0 / 11</strong>
+            </div>
+        </section>
+
+        <section class="lineup-layout">
+            <article class="feature-panel lineup-panel">
+                <div class="section-heading">
+                    <h2>선발 포지션 배치</h2>
+                    <button id="auto-fill-button" class="ghost-button" type="button">자동 배치</button>
+                </div>
+                <div id="lineup-slots" class="lineup-slots"></div>
+                <div class="stack-actions">
+                    <button id="save-lineup-button" class="primary-button" type="button">배치 저장</button>
+                    <span id="lineup-save-message" class="inline-note"></span>
+                </div>
+            </article>
+
+            <aside class="feature-panel squad-panel">
+                <div class="section-heading">
+                    <h2>구매한 선수단</h2>
+                    <a class="text-link" href="/transfer-market.html">선수 더 사러 가기</a>
+                </div>
+                <div id="lineup-squad-list" class="compact-list"></div>
+            </aside>
+        </section>
+    </main>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

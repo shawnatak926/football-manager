@@ -1,0 +1,507 @@
+:root {
+    --bg: #f6f6f6;
+    --panel: rgba(255, 255, 255, 0.96);
+    --panel-strong: #ffffff;
+    --ink: #0b0b0b;
+    --muted: #666666;
+    --line: rgba(11, 11, 11, 0.1);
+    --accent: #111111;
+    --accent-deep: #000000;
+    --accent-soft: rgba(0, 0, 0, 0.06);
+    --green-soft: rgba(0, 0, 0, 0.05);
+    --shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at top left, rgba(0, 0, 0, 0.08), transparent 22%),
+        radial-gradient(circle at right top, rgba(0, 0, 0, 0.05), transparent 24%),
+        linear-gradient(140deg, #ffffff 0%, #f3f3f3 52%, #ececec 100%);
+    min-height: 100vh;
+}
+
+.site-shell {
+    width: min(1420px, calc(100% - 28px));
+    margin: 0 auto;
+    padding: 20px 0 40px;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 14px 18px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.54);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+}
+
+.brand,
+.main-nav a,
+.text-link,
+.ghost-button,
+.primary-button {
+    text-decoration: none;
+}
+
+.brand {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+}
+
+.main-nav {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.page-content {
+    margin-top: 18px;
+    display: grid;
+    gap: 18px;
+}
+
+.hero,
+.feature-panel,
+.status-card,
+.team-card,
+.market-card,
+.compact-item,
+.lineup-slot {
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: var(--panel);
+    box-shadow: var(--shadow);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 18px;
+    padding: 30px;
+}
+
+.hero-copy h1,
+.page-intro h1,
+.feature-panel h2,
+.section-heading h2,
+.lineup-slot h3 {
+    font-family: "Oswald", sans-serif;
+    margin: 0;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.hero-copy h1,
+.page-intro h1 {
+    font-size: clamp(2rem, 4vw, 4.2rem);
+    line-height: 0.96;
+}
+
+.hero-copy p,
+.page-intro p,
+.feature-panel p,
+.compact-item span,
+.market-card p,
+.inline-note,
+.progress-list li {
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.hero-actions,
+.stack-actions,
+.section-heading,
+.summary-strip {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-actions {
+    margin-top: 22px;
+}
+
+.hero-status {
+    display: grid;
+    gap: 12px;
+}
+
+.status-card {
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.status-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.84rem;
+}
+
+.status-card strong {
+    display: block;
+    margin-top: 8px;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+}
+
+.primary-button,
+.ghost-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.primary-button {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+    color: white;
+}
+
+.ghost-button {
+    background: transparent;
+    color: var(--accent-deep);
+}
+
+.ghost-button.strong {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(18, 26, 35, 0.08);
+}
+
+.text-link {
+    color: var(--accent-deep);
+    font-weight: 600;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.feature-panel {
+    padding: 22px;
+}
+
+.feature-panel.accent {
+    background: linear-gradient(160deg, rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.98));
+}
+
+.progress-list {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 8px;
+}
+
+.page-intro,
+.summary-strip {
+    padding: 24px;
+    border-radius: 24px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.summary-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.team-card,
+.market-card,
+.compact-item,
+.lineup-slot {
+    padding: 18px;
+    background: var(--panel-strong);
+}
+
+.team-card {
+    display: grid;
+    gap: 14px;
+}
+
+.team-card p,
+.market-card p,
+.compact-item p {
+    margin: 0;
+}
+
+.badge-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 7px 11px;
+    font-size: 0.78rem;
+    background: rgba(18, 26, 35, 0.06);
+    color: var(--muted);
+}
+
+.market-layout,
+.lineup-layout {
+    display: grid;
+    grid-template-columns: 1.45fr 0.8fr;
+    gap: 18px;
+}
+
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.market-card {
+    display: grid;
+    gap: 12px;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 245, 245, 0.96) 100%);
+    position: relative;
+}
+
+.market-card.fifa-card {
+    grid-template-columns: 136px 1fr;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    border-radius: 26px;
+}
+
+.player-portrait {
+    position: relative;
+    min-height: 220px;
+    background:
+        linear-gradient(180deg, #121212 0%, #2b2b2b 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.player-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player-portrait::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 56px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.portrait-fallback {
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.08em;
+    opacity: 0.8;
+    margin-bottom: 18px;
+}
+
+.card-content {
+    padding: 18px 18px 16px;
+    display: grid;
+    gap: 12px;
+}
+
+.overall-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    background: #111111;
+    color: #ffffff;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.65rem;
+}
+
+.player-meta-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.market-card h2 {
+    font-size: 1.55rem;
+}
+
+.fifa-lines {
+    display: grid;
+    gap: 8px;
+}
+
+.fifa-line {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.fifa-stat {
+    padding: 10px 8px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.04);
+    text-align: center;
+}
+
+.fifa-stat strong {
+    display: block;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.15rem;
+}
+
+.fifa-stat span {
+    font-size: 0.72rem;
+    color: var(--muted);
+}
+
+.market-card-header,
+.compact-item-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.price-tag {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.35rem;
+    color: var(--accent-deep);
+}
+
+.compact-list,
+.lineup-slots {
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.compact-item {
+    display: grid;
+    gap: 6px;
+}
+
+.lineup-slots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lineup-slot {
+    display: grid;
+    gap: 10px;
+}
+
+select,
+button {
+    font: inherit;
+}
+
+select {
+    width: 100%;
+    border: 1px solid rgba(18, 26, 35, 0.12);
+    border-radius: 14px;
+    background: white;
+    padding: 11px 12px;
+}
+
+.inline-note {
+    align-self: center;
+}
+
+.warn-box {
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px dashed rgba(0, 0, 0, 0.25);
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+}
+
+.ok-box {
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: var(--green-soft);
+    color: #111111;
+}
+
+@media (max-width: 1180px) {
+    .hero,
+    .market-layout,
+    .lineup-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .home-grid,
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .site-shell {
+        width: min(100% - 18px, 100%);
+    }
+
+    .site-header,
+    .hero,
+    .feature-panel,
+    .page-intro,
+    .summary-strip {
+        padding: 18px;
+    }
+
+    .summary-strip,
+    .home-grid,
+    .card-grid,
+    .market-grid,
+    .lineup-slots {
+        grid-template-columns: 1fr;
+    }
+
+    .main-nav {
+        gap: 10px;
+    }
+}

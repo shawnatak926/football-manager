@@ -13,6 +13,7 @@ import com.example.footballmanager.service.team.dto.CreateCustomTeamRequest;
 import com.example.footballmanager.service.team.dto.CreateCustomTeamResponse;
 import com.example.footballmanager.service.team.dto.EplTeamListResponse;
 import com.example.footballmanager.service.team.dto.EplTeamResponse;
+import com.example.footballmanager.service.team.dto.TeamSummaryResponse;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -59,6 +60,20 @@ public class TeamQueryService {
                 EPL_TEAMS_2026_2027.size(),
                 EPL_TEAMS_2026_2027
         );
+    }
+
+    @Transactional(readOnly = true)
+    public List<TeamSummaryResponse> getSavedTeams() {
+        return teamRepository.findAll().stream()
+                .map(team -> new TeamSummaryResponse(
+                        team.getId(),
+                        team.getName(),
+                        team.getFormation().getName(),
+                        team.getTactic().getName(),
+                        team.getMorale(),
+                        team.getPlayers().size()
+                ))
+                .toList();
     }
 
     @Transactional

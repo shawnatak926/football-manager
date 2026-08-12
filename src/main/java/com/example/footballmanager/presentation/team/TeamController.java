@@ -4,7 +4,9 @@ import com.example.footballmanager.service.team.TeamQueryService;
 import com.example.footballmanager.service.team.dto.CreateCustomTeamRequest;
 import com.example.footballmanager.service.team.dto.CreateCustomTeamResponse;
 import com.example.footballmanager.service.team.dto.EplTeamListResponse;
+import com.example.footballmanager.service.team.dto.TeamSummaryResponse;
 import jakarta.validation.Valid;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,6 +24,11 @@ public class TeamController {
     @GetMapping("/epl")
     public EplTeamListResponse getEplTeams() {
         return teamQueryService.getEplTeams();
+    }
+
+    @GetMapping
+    public List<TeamSummaryResponse> getSavedTeams() {
+        return teamQueryService.getSavedTeams();
     }
 
     @PostMapping("/epl/custom")
